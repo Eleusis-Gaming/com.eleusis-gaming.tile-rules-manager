@@ -53,7 +53,7 @@ namespace Editor
                 Space(10);
                 TileRuleBaseSection(tileConfig);
                 TileRuleNeighborsSection(tileConfig);
-                TileRuleSocketsSection(tileConfig);
+                TileRuleSocketsSection(tileConfig.Sockets);
                 TileRuleVariantsSection(tileConfig);
                 AddHorizontalLine();
             }

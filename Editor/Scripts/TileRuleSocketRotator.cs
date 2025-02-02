@@ -12,18 +12,44 @@ namespace Editor.Scripts
                 ETileRotation.Degree0 => sockets,
                 ETileRotation.Degree90 => new TileSockets(new[]
                 {
-                    sockets.topSwSocket, sockets.topNwSocket, sockets.topNeSocket, sockets.topSeSocket,
-                    sockets.bottomSwSocket, sockets.bottomNwSocket, sockets.bottomNeSocket, sockets.bottomSeSocket
+                    sockets.topWSocket, 
+                    sockets.topNSocket, 
+                    sockets.topESocket, 
+                    sockets.topSSocket
+                }, new[]
+                {
+                    sockets.topSwSocket, 
+                    sockets.topNwSocket, 
+                    sockets.topNeSocket, 
+                    sockets.topSeSocket
                 }),
                 ETileRotation.Degree180 => new TileSockets(new[]
                 {
-                    sockets.topSeSocket, sockets.topSwSocket, sockets.topNwSocket, sockets.topNeSocket,
-                    sockets.bottomSeSocket, sockets.bottomSwSocket, sockets.bottomNwSocket, sockets.bottomNeSocket
+                    sockets.topSSocket,
+                    sockets.topWSocket,
+                    sockets.topNSocket,
+                    sockets.topESocket,
+
+                }, new[]
+                {
+                    sockets.topSeSocket, 
+                    sockets.topSwSocket, 
+                    sockets.topNwSocket, 
+                    sockets.topNeSocket,
                 }),
                 ETileRotation.Degree270 => new TileSockets(new[]
                 {
-                    sockets.topNeSocket, sockets.topSeSocket, sockets.topSwSocket, sockets.topNwSocket,
-                    sockets.bottomNeSocket, sockets.bottomSeSocket, sockets.bottomSwSocket, sockets.bottomNwSocket
+                    sockets.topESocket,
+                    sockets.topSSocket,
+                    sockets.topWSocket,
+                    sockets.topNSocket,
+
+                }, new[]
+                {
+                    sockets.topNeSocket, 
+                    sockets.topSeSocket, 
+                    sockets.topSwSocket, 
+                    sockets.topNwSocket,
                 }),
                 _ => throw new ArgumentOutOfRangeException(nameof(rotation), rotation, null)
             };

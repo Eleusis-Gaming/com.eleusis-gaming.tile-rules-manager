@@ -5,28 +5,40 @@ namespace Editor.Scripts
     [System.Serializable]
     public class TileSockets
     {
-        // Top four sockets on the tile
-        public ETileSocket topNwSocket;
-        public ETileSocket topNeSocket;
-        public ETileSocket topSeSocket;
-        public ETileSocket topSwSocket;
+        // Top four side sockets on the tile
+        public ETileSideSocket topNSocket;
+        public ETileSideSocket topESocket;
+        public ETileSideSocket topSSocket;
+        public ETileSideSocket topWSocket;
         
-        // Bottom four sockets on the tile
-        public ETileSocket bottomNwSocket;
-        public ETileSocket bottomNeSocket;
-        public ETileSocket bottomSeSocket;
-        public ETileSocket bottomSwSocket;
+        // Top four corner sockets on the tile
+        public ETileCornerSocket topNwSocket;
+        public ETileCornerSocket topNeSocket;
+        public ETileCornerSocket topSeSocket;
+        public ETileCornerSocket topSwSocket;
 
-        public TileSockets(ETileSocket[] sockets)
+        // Top four corner sockets on the tile
+        public ETileCornerSocket bottomNwSocket;
+        public ETileCornerSocket bottomNeSocket;
+        public ETileCornerSocket bottomSeSocket;
+        public ETileCornerSocket bottomSwSocket;
+        
+        public TileSockets(ETileSideSocket[] sideSockets, ETileCornerSocket[] cornerSockets)
         {
-            topNwSocket = sockets[0];
-            topNeSocket = sockets[1];
-            topSeSocket = sockets[2];
-            topSwSocket = sockets[3];
-            bottomNwSocket = sockets[4];
-            bottomNeSocket = sockets[5];
-            bottomSeSocket = sockets[6];
-            bottomSwSocket = sockets[7];
+            topNSocket = sideSockets[0];
+            topESocket = sideSockets[1];
+            topSSocket = sideSockets[2];
+            topWSocket = sideSockets[3];
+            
+            topNwSocket = cornerSockets[0];
+            topNeSocket = cornerSockets[1];
+            topSeSocket = cornerSockets[2];
+            topSwSocket = cornerSockets[3];
+            
+            bottomNwSocket = ETileCornerSocket.Inner;
+            bottomNeSocket = ETileCornerSocket.Inner;
+            bottomSeSocket = ETileCornerSocket.Inner;
+            bottomSwSocket = ETileCornerSocket.Inner;
         }
     }
 }
